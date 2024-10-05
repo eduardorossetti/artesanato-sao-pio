@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --light: 12.6 12.8% 90%;
+  --primary: 12.6 12.8% 60%;
+  --brand: 12.6 12.8% 40%;
+  --dark: 12.6 12.8% 29%;
+  --success: 133 73% 23%;
+  --warning: 41 100% 23%;
+  --danger: 340 98% 36%;
+}

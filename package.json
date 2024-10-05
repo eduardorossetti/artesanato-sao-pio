@@ -12,11 +12,19 @@
     "reinstall": "find . -type d -name node_modules | xargs rm -rf && pnpm i"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.2.0",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.1",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.446.0",
     "next": "14.2.13",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "5.0.0-rc.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",

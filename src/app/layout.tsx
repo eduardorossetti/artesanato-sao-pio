@@ -1,6 +1,8 @@
-import type { Metadata, Viewport } from 'next'
+import '@/assets/css/index.css'
+
 import { Open_Sans as OpenSans } from 'next/font/google'
-import './globals.css'
+
+import type { Metadata, Viewport } from 'next'
 
 const openSans = OpenSans({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -13,13 +15,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Artesanato São Pio',
-  description: 'Catálogo de Terços, Velas e Imagens do Artesanato São Pio',
-  icons: [
-    {
-      url: '/icon.ico',
+  description: 'Catálogo de artigos religosos.',
+  icons: {
+    icon: {
+      url: 'icon.ico',
       type: 'image/x-icon',
     },
-  ],
+  },
 }
 
 export default function RootLayout({
@@ -29,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${openSans.className} text-neutral-600`}>
+      <body className={`${openSans.className} bg-dark text-neutral-900`}>
         {children}
       </body>
     </html>
