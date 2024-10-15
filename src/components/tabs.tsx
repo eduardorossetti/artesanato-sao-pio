@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+
 import { cn } from '@/lib/helpers/classname'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 
@@ -12,7 +13,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      'flex w-full flex-wrap items-center justify-center gap-x-1 gap-y-6 rounded-lg bg-light p-2 text-black lg:w-auto',
+      'flex w-full flex-wrap items-center justify-center gap-x-0.5 gap-y-4 rounded-lg bg-dark p-2 text-light lg:w-auto',
       className,
     )}
     {...props}
@@ -28,7 +29,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      'inline-flex flex-auto items-center justify-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-base font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-dark data-[state=active]:text-white data-[state=active]:shadow lg:min-w-[12rem]',
+      'inline-flex flex-auto items-center justify-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:text-zinc-800 data-[state=active]:shadow lg:min-w-[10rem]',
       className,
     )}
     {...props}

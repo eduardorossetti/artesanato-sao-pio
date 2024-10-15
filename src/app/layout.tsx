@@ -15,13 +15,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Artesanato São Pio',
-  description: 'Catálogo de artigos religosos.',
-  icons: {
-    icon: {
-      url: 'icon.ico',
-      type: 'image/x-icon',
-    },
-  },
+  description: 'Catálogo de artigos sacros.',
 }
 
 export default function RootLayout({

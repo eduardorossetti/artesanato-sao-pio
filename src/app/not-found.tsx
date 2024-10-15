@@ -4,13 +4,13 @@ export default function Root404Page() {
   return (
     <div className="grid h-screen place-content-center px-4">
       <div className="text-center">
-        <h1 className="text-9xl font-black text-gray-900">404</h1>
+        <h1 className="text-9xl font-black text-white">404</h1>
 
-        <p className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <p className="text-2xl font-bold tracking-tight text-white sm:text-4xl">
           Ops!
         </p>
 
-        <p className="mt-4 text-gray-900">
+        <p className="mt-4 text-white">
           Não conseguimos encontrar a página que você estava procurando.
         </p>
 

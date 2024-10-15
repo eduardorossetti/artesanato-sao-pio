@@ -1,11 +1,4 @@
-import {
-  BookAIcon,
-  BoxIcon,
-  ChurchIcon,
-  InstagramIcon,
-  MailIcon,
-  PhoneCall,
-} from 'lucide-react'
+import { BookAIcon, BoxIcon, ChurchIcon, InstagramIcon } from 'lucide-react'
 import Link from 'next/link'
 
 import { LogoNav } from '@/components/logo-nav'
@@ -13,15 +6,19 @@ import { MenuItem } from '@/components/menu-item'
 import { Separator } from '@/components/separator'
 import { SidebarOpenButton } from '@/components/sidebar-button'
 import { SidebarContainer } from '@/components/sidebar-container'
+import WhatsAppIcon from '@/assets/svg/whatsapp'
 
 type HeaderLinkProps = {
   href: string
   children: React.ReactNode
+  target?: string
 }
 
-const HeaderLink = ({ href, children }: HeaderLinkProps) => (
-  <Link prefetch={false} className="mr-4" href={href}>
-    <span className="text-base font-semibold text-white">{children}</span>
+const HeaderLink = ({ href, children, target }: HeaderLinkProps) => (
+  <Link prefetch={false} className="mr-4" href={href} target={target}>
+    <span className="text-base font-semibold text-white hover:text-gray-300 transition-colors duration-200">
+      {children}
+    </span>
   </Link>
 )
 
@@ -43,10 +40,11 @@ export default async function HomeLayout({
 
           <div className="flex justify-end">
             <div className="hidden lg:block">
-              <HeaderLink href="/catalogo">Catálogo</HeaderLink>
-              <HeaderLink href="/mosteiro">Sobre o Mosteiro</HeaderLink>
-              <HeaderLink href="/sobre">Sobre Nós</HeaderLink>
-              <HeaderLink href="/contato">Contate-nos</HeaderLink>
+              <HeaderLink href="/artigos-sacros">Artigos Sacros</HeaderLink>
+              <HeaderLink href={`${process.env.CLARISSAS_URL}`} target="_blank">
+                Conheça o Mosteiro
+              </HeaderLink>
+              <HeaderLink href="/quem-somos">Quem Somos?</HeaderLink>
             </div>
             <SidebarOpenButton />
           </div>
@@ -73,44 +71,48 @@ export default async function HomeLayout({
 
           <Separator className="my-3" />
 
-          <MenuItem.Single href="/catalogo">
+          <MenuItem.Single href="/artigos-sacros">
             <BoxIcon />
-            <span>Catálogo</span>
+            <span>Artigos Sacros</span>
           </MenuItem.Single>
-          <MenuItem.Single href="/sobre">
+          <MenuItem.Single href="/quem-somos">
             <BookAIcon />
-            <span>Sobre Nós</span>
-          </MenuItem.Single>
-          <MenuItem.Single href="/mosteiro">
-            <ChurchIcon />
-            <span>Sobre o Mosteiro</span>
-          </MenuItem.Single>
-          <MenuItem.Single href="/contato">
-            <MailIcon />
-            <span>Fale Conosco</span>
+            <span>Quem Somos?</span>
           </MenuItem.Single>
 
           <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center space-y-4 m-3">
             <Separator />
-            <div className="flex items-center justify-center space-x-4">
-              <Link
-                href="https://www.instagram.com/artesanatosaopio/"
-                target="_blank"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="text-pink-500 hover:text-pink-600" />
-              </Link>
-              <Link
-                href="https://wa.me/18998044847"
-                target="_blank"
-                aria-label="WhatsApp"
-              >
-                <PhoneCall className="text-green-500 hover:text-green-600" />
-              </Link>
-            </div>
+            <Link
+              href={`${process.env.CLARISSAS_URL}`}
+              target="_blank"
+              className="flex items-center space-x-2"
+            >
+              <ChurchIcon />
+              <span>Conheça o Mosteiro</span>
+            </Link>
+            <Link
+              href={`${process.env.INSTAGRAM_URL}`}
+              target="_blank"
+              aria-label="Instagram"
+              className="flex items-center space-x-2"
+            >
+              <InstagramIcon className="text-pink-700 hover:text-pink-900" />
+              <span className="text-pink-700 hover:text-pink-900">
+                @artesanatosaopio
+              </span>
+            </Link>
           </div>
         </ul>
       </SidebarContainer>
+
+      <Link
+        href={`https://wa.me/${process.env.PHONE_NUMBER}?text=Olá, gostaria de fazer um pedido!`}
+        className="fixed bottom-14 right-4 bg-green-500 text-white rounded-full p-2 shadow-lg hover:bg-green-600 transition"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <WhatsAppIcon />
+      </Link>
 
       <footer className="fixed left-0 right-0 bottom-0 z-[97] flex items-center justify-center bg-dark p-4 shadow-[0_4px_30px_4px_#0000001a]">
         <span className="text-xs font-semibold text-white">

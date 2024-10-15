@@ -9,6 +9,12 @@ export async function getProducts() {
 
   const response = await notion.databases.query({
     database_id: databaseId,
+    filter: {
+      property: 'status',
+      select: {
+        equals: 'active',
+      },
+    },
   })
 
   const typedResponse = response as unknown as NotionDatabaseResponse
