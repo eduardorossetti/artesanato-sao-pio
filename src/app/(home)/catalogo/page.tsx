@@ -1,8 +1,16 @@
+import { getProducts } from '@/services/notion'
 import { Card, CardContent, CardHeader } from '@/components/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/tabs'
 import Image from 'next/image'
+import { MaskMoney } from '@/components/mask/decimal'
 
 export default async function CatalogoPage() {
+  const products = await getProducts()
+
+  const velas = products.filter((product) => product.category === 'vela')
+  const imagens = products.filter((product) => product.category === 'imagem')
+  const tercos = products.filter((product) => product.category === 'terço')
+
   return (
     <Card>
       <Tabs defaultValue="velas">
@@ -17,26 +25,29 @@ export default async function CatalogoPage() {
         <TabsContent value="velas">
           <CardContent>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {Array.from({ length: 4 }).map((_, index) => (
+              {velas.map((product, index) => (
                 <Card
                   key={index}
                   className="bg-zinc-800 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
                 >
                   <div className="relative overflow-hidden rounded-t-lg">
                     <Image
-                      src="/vela_sagrado_coracao.png"
-                      alt="Imagem do produto"
+                      src={product.image}
+                      alt={product.description}
                       width={500}
                       height={500}
                       quality={100}
+                      priority
                       className="object-cover w-full transition-transform duration-500"
                     />
                   </div>
                   <div className="p-4 text-white text-center">
                     <h2 className="text-lg font-semibold ">
-                      Vela Sagrado Coração 15x5cm
+                      {product.description}
                     </h2>
-                    <p className="text-xl font-bold ">R$ 39,90</p>
+                    <p className="text-xl font-bold ">
+                      <MaskMoney value={product.price} />
+                    </p>
                   </div>
                 </Card>
               ))}
@@ -47,15 +58,15 @@ export default async function CatalogoPage() {
         <TabsContent value="imagens">
           <CardContent>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {Array.from({ length: 4 }).map((_, index) => (
+              {imagens.map((product, index) => (
                 <Card
                   key={index}
                   className="bg-zinc-800 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
                 >
                   <div className="relative overflow-hidden rounded-t-lg">
                     <Image
-                      src="/pe-pio.png"
-                      alt="Imagem do produto"
+                      src={product.image}
+                      alt={product.description}
                       width={500}
                       height={500}
                       quality={100}
@@ -64,9 +75,11 @@ export default async function CatalogoPage() {
                   </div>
                   <div className="p-4 text-white text-center">
                     <h2 className="text-lg font-semibold ">
-                      São Pio de Pietrelcina 30cm
+                      {product.description}
                     </h2>
-                    <p className="text-xl font-bold ">R$ 139,90</p>
+                    <p className="text-xl font-bold ">
+                      <MaskMoney value={product.price} />
+                    </p>
                   </div>
                 </Card>
               ))}
@@ -77,15 +90,15 @@ export default async function CatalogoPage() {
         <TabsContent value="tercos">
           <CardContent>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {Array.from({ length: 4 }).map((_, index) => (
+              {tercos.map((product, index) => (
                 <Card
                   key={index}
                   className="bg-zinc-800 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
                 >
                   <div className="relative overflow-hidden rounded-t-lg">
                     <Image
-                      src="/terco-mariano.png"
-                      alt="Imagem do produto"
+                      src={product.image}
+                      alt={product.description}
                       width={500}
                       height={500}
                       quality={100}
@@ -94,9 +107,11 @@ export default async function CatalogoPage() {
                   </div>
                   <div className="p-4 text-white text-center">
                     <h2 className="text-lg font-semibold ">
-                      Santo Terço Mariano
+                      {product.description}
                     </h2>
-                    <p className="text-xl font-bold ">R$ 39,90</p>
+                    <p className="text-xl font-bold ">
+                      <MaskMoney value={product.price} />
+                    </p>
                   </div>
                 </Card>
               ))}

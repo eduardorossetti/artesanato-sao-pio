@@ -12,6 +12,7 @@
     "reinstall": "find . -type d -name node_modules | xargs rm -rf && pnpm i"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.15",
     "@radix-ui/react-scroll-area": "^1.2.0",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
@@ -23,6 +24,7 @@
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
+    "react-number-format": "^5.4.2",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "5.0.0-rc.2"
   },
