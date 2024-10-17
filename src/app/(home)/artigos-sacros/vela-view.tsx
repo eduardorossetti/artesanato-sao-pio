@@ -1,4 +1,4 @@
-import { MaskMoney } from '@/components/mask/decimal'
+// import { MaskMoney } from '@/components/mask/decimal'
 import Image from 'next/image'
 import { Product } from './page'
 
@@ -26,9 +26,9 @@ export default async function VelaView({ velas }: VelaViewProps) {
           </div>
           <div className="p-4 text-white text-center">
             <h2 className="text-lg font-semibold ">{product.description}</h2>
-            <p className="text-xl font-bold ">
+            {/* <p className="text-xl font-bold ">
               <MaskMoney value={product.price} />
-            </p>
+            </p> */}
           </div>
         </div>
       ))}

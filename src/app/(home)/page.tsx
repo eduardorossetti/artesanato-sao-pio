@@ -19,7 +19,7 @@ export default async function HomePage() {
           className="hidden lg:block"
         />
         <span className="text-center text-base font-semibold lg:hidden">
-          Bem-vindo! Conheça nosso catálogo e faça seu pedido pelo{' '}
+          Bem-vindo! Em breve, você poderá fazer seu pedido pelo{' '}
           <Link
             href={`https://wa.me/${process.env.PHONE_NUMBER}?text=Olá, gostaria de fazer um pedido!`}
             target="_blank"

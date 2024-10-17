@@ -8,45 +8,33 @@ export default async function QuemSomosPage() {
         <h1 className="text-2xl font-semibold">Quem Somos?</h1>
       </CardHeader>
       <CardContent>
-        <h2 className="text-md font-semibold mt-4">Nossa Missão</h2>
+        <h2 className="text-md font-semibold">Qual nossa finalidade?</h2>
         <p>
-          O Artesanato São Pio é uma valiosa iniciativa em parceria com as Irmãs
-          Clarissas do Mosteiro Maria Imaculada, localizado em Marília-SP. Nossa
-          missão é promover e divulgar os trabalhos artesanais singulares
-          produzidos pelas irmãs, oferecendo ao público a oportunidade de
-          apreciar e adquirir essas obras de arte devocional.
+          Nossa finalidade é divulgar a vida e os trabalhos artesanais das Irmãs
+          Clarissas do Mosteiro Maria Imaculada, de Marília-SP, que vivem suas
+          entregas ao Senhor pela vida monástica, com intenso amor e
+          generosidade.
         </p>
-
-        <h2 className="text-md font-semibold mt-4">Apoio ao Mosteiro</h2>
         <p>
-          Através da venda de nossos artigos sacros, o Artesanato São Pio não
-          apenas viabiliza a manutenção do Mosteiro, mas também assegura a
-          continuidade da vida contemplativa das irmãs, permitindo que elas
-          dediquem suas vidas à oração e ao serviço espiritual. Cada compra
-          contribui para a sustentação desse estilo de vida único e
-          profundamente significativo.
+          “Ora et Labora”. Como conhecemos pela regra monástica de São Bento,
+          inspirador da vida contemplativa no ocidente, o trabalho manual é
+          pilar essencial no cotidiano do religioso, juntamente com a oração. No
+          labor do trabalho diário, encontramos o mesmo Senhor que, escondido na
+          carpintaria de Narazé, soube oferecer cada gota de Seu suor ao Bondoso
+          Pai, em favor de toda humanidade.
         </p>
 
         <h2 className="text-md font-semibold mt-4">Agradecimento</h2>
         <p>
-          Expressamos nossa sincera gratidão a todos que colaboram com nossa
-          missão. Seu apoio é fundamental para manter a presença de Deus em
-          nosso mundo e para continuar este trabalho tão especial. Juntos, somos
-          capazes de fazer a diferença e espalhar o amor e a paz que os artigos
-          artesanais representam.
-        </p>
-
-        <p className="mt-4">
-          <strong>
-            Descubra nossos produtos e junte-se a nós nessa missão!
-          </strong>
+          Em breve, divulgaremos mais sobre seus trabalhos, onde você poderá
+          fazer seu pedido. Enquanto isso, confira os links na bio pelo
+          instagram e conheça um pouco mais da vida das irmãs clarissas.
         </p>
 
         <h2 className="text-md font-semibold mt-4">Entre em Contato</h2>
         <p>
           Se você tiver alguma dúvida ou quiser saber mais sobre o nosso
-          trabalho e produtos, não hesite em entrar em contato conosco pelos
-          seguintes canais:
+          trabalho, não hesite em entrar em contato conosco:
         </p>
         <ul className="list-disc ml-6">
           <li>
@@ -55,7 +43,7 @@ export default async function QuemSomosPage() {
               href={`mailto:${process.env.MAIL_TO}`}
               className="text-blue-800 hover:text-blue-900"
             >
-              contato@artesanatosaopio.com
+              artesanatosaopio@gmail.com
             </Link>
           </li>
           <li>
