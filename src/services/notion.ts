@@ -1,23 +1,31 @@
 'use server'
 
-import { Client } from '@notionhq/client'
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY })
-
 export async function getProducts() {
   const databaseId = '120a2d3a29aa80aea6c5cb6b1eed867e'
 
-  const response = await notion.databases.query({
-    database_id: databaseId,
-    filter: {
-      property: 'status',
-      select: {
-        equals: 'active',
+  const response = await fetch(
+    `https://api.notion.com/v1/databases/${databaseId}/query`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
+        'Notion-Version': '2022-06-28',
+        'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        filter: {
+          property: 'status',
+          select: {
+            equals: 'active',
+          },
+        },
+      }),
+      next: { revalidate: 3600 },
     },
-  })
+  )
 
-  const typedResponse = response as unknown as NotionDatabaseResponse
+  const data = await response.json()
+  const typedResponse = data as unknown as NotionDatabaseResponse
 
   const products = typedResponse.results.map((product) => {
     return {
