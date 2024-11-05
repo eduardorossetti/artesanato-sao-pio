@@ -12,14 +12,7 @@ export async function getProducts() {
         'Notion-Version': '2022-06-28',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        filter: {
-          property: 'status',
-          select: {
-            equals: 'active',
-          },
-        },
-      }),
+      body: JSON.stringify({}),
       next: { revalidate: 3600 },
     },
   )

@@ -1,6 +1,7 @@
 // import { MaskMoney } from '@/components/mask/decimal'
 import Image from 'next/image'
 import { Product } from './page'
+import { MaskMoney } from '@/components/mask/decimal'
 
 interface ImagemViewProps {
   imagens: Product[]
@@ -12,7 +13,7 @@ export default async function ImagemView({ imagens }: ImagemViewProps) {
       {imagens.map((product, index) => (
         <div
           key={index}
-          className="bg-zinc-800 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+          className="bg-dark rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
         >
           <div className="relative overflow-hidden rounded-t-lg">
             <Image
@@ -25,10 +26,13 @@ export default async function ImagemView({ imagens }: ImagemViewProps) {
             />
           </div>
           <div className="p-4 text-white text-center">
-            <h2 className="text-lg font-semibold ">{product.description}</h2>
-            {/* <p className="text-xl font-bold ">
+            <h2 className="text-lg font-semibold">{product.description}</h2>
+            <p className="text-xl font-bold">
               <MaskMoney value={product.price} />
-            </p> */}
+            </p>
+            <p className="text-xl font-semibold">
+              {product.status === 'active' ? 'Pronta Entrega' : 'Sob Encomenda'}
+            </p>
           </div>
         </div>
       ))}
