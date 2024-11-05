@@ -12,7 +12,18 @@ export async function getProducts() {
         'Notion-Version': '2022-06-28',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({}),
+      body: JSON.stringify({
+        sorts: [
+          {
+            property: 'status',
+            direction: 'descending',
+          },
+          {
+            property: 'description',
+            direction: 'ascending',
+          },
+        ],
+      }),
       next: { revalidate: 3600 },
     },
   )
