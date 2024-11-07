@@ -1,24 +1,10 @@
-interface Title {
+interface Text {
   plain_text: string
 }
 
 interface Description {
   id: string
-  title: Title[]
-}
-
-interface FileUrl {
-  url: string
-  expiry_time: string
-}
-
-interface File {
-  file: FileUrl
-}
-
-interface Image {
-  id: string
-  files: File[]
+  title: Text[]
 }
 
 interface Select {
@@ -42,11 +28,16 @@ interface Status {
   select: Select
 }
 
+interface Photo {
+  id: string
+  rich_text: Text[]
+}
+
 interface Properties {
   status: Status
   category: Category
   price: Price
-  image: Image
+  photo: Photo
   description: Description
 }
 

@@ -9,7 +9,7 @@ export interface Product {
   status: string
   category: string
   price: number
-  image: string
+  photo: string
   description: string
 }
 

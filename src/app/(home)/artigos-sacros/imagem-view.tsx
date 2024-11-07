@@ -17,7 +17,7 @@ export default async function ImagemView({ imagens }: ImagemViewProps) {
         >
           <div className="relative overflow-hidden rounded-t-lg">
             <Image
-              src={product.image}
+              src={product.photo}
               alt={product.description}
               width={500}
               height={500}

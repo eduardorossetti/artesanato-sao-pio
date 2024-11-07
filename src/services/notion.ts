@@ -24,7 +24,7 @@ export async function getProducts() {
           },
         ],
       }),
-      next: { revalidate: 3600 },
+      next: { revalidate: 3600 * 24 * 1 },
     },
   )
 
@@ -36,7 +36,7 @@ export async function getProducts() {
       status: product.properties.status.select.name,
       category: product.properties.category.select.name,
       price: product.properties.price.number,
-      image: product.properties.image.files[0].file.url,
+      photo: product.properties.photo.rich_text[0].plain_text,
       description: product.properties.description.title[0].plain_text,
     }
   })
