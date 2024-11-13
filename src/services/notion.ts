@@ -15,6 +15,10 @@ export async function getProducts() {
       body: JSON.stringify({
         sorts: [
           {
+            property: 'priority',
+            direction: 'ascending',
+          },
+          {
             property: 'status',
             direction: 'descending',
           },
