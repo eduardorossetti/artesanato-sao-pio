@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cvws.icloud-content.com',
+        hostname: 'sanctuspaterpius.s3.sa-east-1.amazonaws.com',
         pathname: '/**',
       },
     ],

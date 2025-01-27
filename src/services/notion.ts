@@ -28,7 +28,7 @@ export async function getProducts() {
           },
         ],
       }),
-      next: { revalidate: 3600 * 24 * 1 },
+      next: { revalidate: 15 * 24 * 3600 },
     },
   )
 
